@@ -10,11 +10,6 @@ public abstract class Creature {
     private double speed;
     private int countCreature;
 
-    @Override
-    public String toString() {
-        return name;
-    }
-
     public Creature(String name, int level, int attack, int defense, double speed) {
         this.name = name;
         this.level = level;

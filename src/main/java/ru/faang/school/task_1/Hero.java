@@ -10,7 +10,7 @@ public class Hero {
     private String fraction;
     private int experience;
     private int level;
-    private Map<Creature, Integer> army = new HashMap<>();
+    private List<Creature> army = new ArrayList<>();
 
     public Hero(String name, String fraction, int experience, int level) {
         this.name = name;
@@ -19,27 +19,12 @@ public class Hero {
         this.level = level;
     }
     public void addCreature(Creature creature, int quantity) {
-        if (army.containsKey(creature)) {
-            army.put(creature, army.get(creature) + quantity);
-        } else army.put(creature, quantity);
-    }
-    public void removeCreature(Creature creature, int quantity) {
-        if (!(army.containsKey(creature))) {
-            throw new IllegalArgumentException("Нет такого существа");
+        for (int i = 0; i < quantity; i++) {
+            army.add(creature);
         }
+    }
 
-        if (army.get(creature) > quantity) {
-            army.put(creature, army.get(creature) - quantity);
-        } else {
-            army.remove(creature);
-        }
-    }
-    public Map<Creature, Integer> getArmy() {
+    public List<Creature> getArmy() {
         return army;
-    }
-    public void printInfoArmy() {
-        for (Map.Entry<Creature, Integer> entry: army.entrySet()) {
-            System.out.println(String.format("Героев под названием %s - %d штук", entry.getKey().getName(), entry.getValue()));
-        }
     }
 }

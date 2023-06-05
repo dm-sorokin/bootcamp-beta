@@ -9,10 +9,11 @@ public class Main {
         hero.addCreature(new Griffin(), 2);
         hero.addCreature(new Pikeman(), 1);
         hero.addCreature(new Swordman(), 3);
-        hero.addCreature(new Griffin(), 5);
-        hero.printInfoArmy();
+        hero.addCreature(new Griffin(), 3);
 
-        System.out.println(hero.getArmy().keySet());
+        for (Creature creature: hero.getArmy()) {
+            System.out.println(creature.getName() + " - " + creature);
+        }
 
 //
 //        hero.removeCreature(new Griffin(), 2);
