@@ -8,7 +8,9 @@ public class Main {
         Server server = new Server(5.5, 10, 2.3);
         Server server1 = new Server(6.21, 15, 3.5);
 
-        DataCenterService dataCenterService = new DataCenterService();
+        DataCenter dataCenter = new DataCenter();
+
+        DataCenterService dataCenterService = new DataCenterService(dataCenter);
         dataCenterService.addServer(server);
         dataCenterService.addServer(server1);
 
