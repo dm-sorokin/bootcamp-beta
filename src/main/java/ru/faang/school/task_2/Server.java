@@ -10,4 +10,16 @@ public class Server {
         this.maxLoad = maxLoad;
         this.energyConsumption = energyConsumption;
     }
+
+    public double getLoad() {
+        return load;
+    }
+
+    public double getMaxLoad() {
+        return maxLoad;
+    }
+
+    public double getEnergyConsumption() {
+        return energyConsumption;
+    }
 }
